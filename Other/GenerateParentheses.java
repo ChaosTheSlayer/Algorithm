@@ -32,6 +32,25 @@ public class GenerateParentheses{
 
     }
 
+    //DFS 储存结果
+    public static int helperDFS(int left,int right){
+    	if(left == 0 && right == 0){
+    		return 1;
+    	}
+    	if(left> right){
+    		return 0;
+    	}
+    	int leftCount = 0;
+    	int rightCount = 0;
+    	if(left >0){
+    		leftCount = helperDFS(left-1,right);
+    	}
+    	if(right > 0){
+    		rightCount = helperDFS(left,right-1);
+    	}
+    	
+    	return leftCount+rightCount;
+    }
 
     //What if we want to know how many diffrent solutions
     //I think we might be able to use dynamic programming to solve this
@@ -62,7 +81,7 @@ public class GenerateParentheses{
 
     public static void main(String[] args){
     	List<String> res = generateParenthesis(5);
-    	System.out.println("We have "+res.size()+" different combinations!");
+    	System.out.println("We have "+helperDFS(5,5)+" different combinations!");
     	System.out.println("We have "+generateParenthesisDP(5)+" different combinations!");
     }
 }
