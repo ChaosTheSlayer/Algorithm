@@ -2,6 +2,7 @@ package Algorithm.Other;
 
 public class ValidSudoku{
 
+//So the time complexity should be O(3* n^2), where n = 9
 public class Solution {
     public boolean isValidSudoku(char[][] board) {
         if(board == null || board.length != 9 || board[0] == null || board[0].length != 9){
