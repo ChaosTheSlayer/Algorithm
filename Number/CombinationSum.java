@@ -35,7 +35,7 @@ public class CombinationSum{
 			//because next recursive call we still using current i as index
 			//that's because even though duplicate is not allowed, 
 			//but a same element can be use multiple times.
-			if(i>index && candidates[i] == candidates[i-1]){
+			if(i>0 && candidates[i] == candidates[i-1]){
 				continue;
 			}
 			curRes.add(candidates[i]);

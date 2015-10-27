@@ -7,6 +7,8 @@ public class MultiplyString{
 	//In think the approach is to simulate the digit multiplication
 	//But remember after the multiplication, we need to reverse the output string
 
+	//This O(mn) time, and O(m+n) space
+
 		public static String multiply(String num1,String num2){
 		//Assume the inputs are valid,
 
@@ -40,4 +42,6 @@ public class MultiplyString{
 		return sb.length() == 0?"0":sb.reverse().toString();
 
 	}
+
+	//We can also solve this problem by using O(m+n)^2 time, but O(1) space
 }
